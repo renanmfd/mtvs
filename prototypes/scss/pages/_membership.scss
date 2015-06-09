@@ -62,8 +62,8 @@
   .stars:after {
     display: block;
     height: 12px;
-    background: url('../../images/star.png');
-    background-image: url('../../images/star.svg'), none;
+    background: url('../images/star.png');
+    background-image: url('../images/star.svg'), none;
     background-repeat: no-repeat;
     
     @include susy-breakpoint($tablet, $susy_tablet) {
@@ -207,8 +207,8 @@
         top: 6px;
         width: 18px;
         height: 18px;
-        background: url('../../images/mark.png');
-        background-image: url('../../images/mark.svg'), none;
+        background: url('../images/mark.png');
+        background-image: url('../images/mark.svg'), none;
         background-size: 18px;
       }
       
@@ -251,7 +251,7 @@
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-    background-image: url('../../images/dropdown.svg');
+    background-image: url('../images/dropdown.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 15px;
