@@ -1421,8 +1421,8 @@ body:after {
   top: 6px;
   width: 18px;
   height: 18px;
-  background: url("images/mark.png");
-  background-image: url("images/mark.svg"), none;
+  background: url("../images/mark.png");
+  background-image: url("../images/mark.svg"), none;
   -webkit-background-size: 18px;
   background-size: 18px;
 }
