@@ -1,0 +1,15 @@
+{% set menu_links = [
+  {'link' : '#', 'title' : 'Employment', 'current' : ''},
+  {'link' : '#', 'title' : 'Acknowledgments', 'current' : ''},
+  {'link' : '#', 'title' : 'Terms of Use', 'current' : ''},
+  {'link' : '#', 'title' : 'Image Rights', 'current' : ''},
+  {'link' : '#', 'title' : 'Privacy Policy', 'current' : ''},
+  {'link' : '#', 'title' : 'Contact Us', 'current' : ''},
+] 
+%}
+
+<ul class="bottom-menu">
+  {% for link in menu_links %}
+    <li><a href="{{ link.link }}" class="{{ link.current }}">{{ link.title }}</a></li>
+  {% endfor %}
+</ul>

@@ -11,7 +11,7 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mv-font1;
   @include regular;
   background-color: $default-background-color;
   color: $default-color;
@@ -32,6 +32,14 @@ body {
   @include index-link;
 }
 
-main {
-  margin-bottom: rem(30px);
+@include susy-breakpoint($mobile_landscape $tablet, $susy) {
+  .container {
+    margin-left: gutter(30px);
+    margin-right: gutter(30px);
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
 }

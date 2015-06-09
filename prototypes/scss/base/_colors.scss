@@ -15,14 +15,26 @@ $grey-c: #ccc;
 $grey-d: #ddd;
 $grey-e: #eee;
 
-//Brand Colors
+// Colors
 $red: #da2626;
 $blue: #0D28FF;
+
+// Brand Colors
+$mv-red:        rgb(141, 40, 56);
+$mv-lightred:   rgb(191, 43, 69);
+$mv-wine:       rgb(70, 20, 28);
+$mv-pink:       rgb(223, 149, 162);
+$mv-darkgray:   rgb(54, 48, 42);
+$mv-gray:       rgb(172, 172, 172);
+$mv-lightgray:  rgb(236, 233, 224);
+$mv-salmon:     rgb(197, 165, 136);
+$mv-yellow:     rgb(240, 179, 54);
+$mv-separator:  rgba(255, 255, 255, 0.2);
 
 
 //Theme specifics
 $border: #000;
-$default-background-color: #fff;
+$default-background-color: #ece9e0;
 $default-color: #000;
 $hover-links: $blue;
 $header: #f0f0f0;

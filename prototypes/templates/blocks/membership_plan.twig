@@ -1,0 +1,21 @@
+
+<h2 class="plan-name">
+  {{ plan.name }}
+</h2>
+<ul class="plan-benefit">
+  {% for benefits in plan.benefits %}
+    <li class="benefit benefit-{{ loop.index }}{% if loop.index > 3 %} extra{% endif %}"><span>{{ benefits|safe }}</span></li>
+  {% endfor %}
+</ul>
+{% if plan.benefits.length > 3 %}
+  <div class="more-benefits"><span>+ {{ plan.benefits.length-3 }} more benefits</span></div>
+{% endif %}
+<div class="plan-prices">
+  {% for price in plan.prices %}
+  	<div class="price-{{ loop.key|css }}">
+  	  <h3>{{ price.title }}</h3>
+  	  <div class="btn btn-membership">{{ price.per_year }}</div>
+  	  <div class="btn btn-membership">{{ price.per_month }}<span>/month</span></div>
+  	</div>
+  {% endfor %}
+</div>

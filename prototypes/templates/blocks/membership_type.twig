@@ -1,0 +1,6 @@
+
+{% for plan in type.plans %}
+  <div class="membership-plan {{ plan.name|css }} collapsed">
+    {% include "membership_plan.twig" with plan %}
+  </div>
+{% endfor %}

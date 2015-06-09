@@ -3,31 +3,38 @@
 
 {% block title %}Membership{% endblock %}
 
-{% block page_heading %}Membership{% endblock %}
+{% block page_heading %}Become a Member{% endblock %}
 
 {% block content %}
   <div class="container">
-    <p>This is the Contact Page</p>
-    <form>
-      <fieldset>
-        <legend>General information</legend>
-        <div class="input">
-          <label>Name</label>
-          <input type="text" name="name" value="">
-        </div>
-        <div class="input">
-          <label>Lastname</label>
-          <input type="text" name="lastname" value="">
-        </div>
-        <div class="textarea">
-          <label>Add some comments</label>
-          <textarea name=""></textarea>
-        </div>
-        <div class="submit">
-          <input type="submit" name="submit" value="Submit">
-        </div>
-      </fieldset>
-    </form>
+    <div class="membership-types">
+      <ul class="tabs">
+        {% for type in types %}
+          <li class="tab {{ type.name|css }}{% if loop.first %} active{% endif %}" data-rel="#{{ type.name|css }}">
+            <a href="#{{ type.name|css }}" title="{{ type.name }}">
+              <span class="stars"></span>
+              <h3>{{ type.name }}</h3>
+            </a>
+          </li>
+          {% if !loop.last %}<li class="separator"></li>{% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% for type in types %}
+      <div id="{{ type.name|css }}" class="membership {{ type.name|css }}{% if loop.first %} active{% endif %}">
+        {% include "blocks/membership_type.twig" with type %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="membership-purchace">
+    <div class="container">  
+      <a href="#" class="purchace submit for-myself">
+        <span>Purchace for myself</span>
+      </a>
+      <a href="#" class="purchace submit as-gift">
+        <span>Give membership as a gift</span>
+      </a>
+    </div>
   </div>
 {% endblock %}
 

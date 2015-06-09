@@ -1,46 +1,55 @@
 // Index header.
 
 header {
-  margin: rem(20px) 0;
+  margin: 0;
 }
 
-.index-header {
-  background-color: $header;
+// End Menu section
+// Title section
+.title-section {
+  background-color: $mv-red;
+  height: 100px;
+}
 
-  .logo {
-    @include span(last 2);
+.title-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-    @include susy-breakpoint($tablet, $susy_tablet) {
-      @include span(last 4);
-    }
+a.logo {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
 
-    @include susy-breakpoint($desktop, $susy_desktop) {
-      @include span(last 2);
-    }
-
-    svg {
-      width: 100%;
-    }
+  img {
+    width: 180px;
+    height: auto;
   }
 
-  h1 {
-    @include span(2);
-    overflow: hidden;
-
-    @include susy-breakpoint($tablet, $susy_tablet) {
-      @include span(4);
-    }
-
-    @include susy-breakpoint($desktop, $susy_desktop) {
-      @include span(4);
-    }
-
-    @include susy-breakpoint($desktop-wide, $susy_desktop-wide) {
-      @include span(3);
-    }
-
-    @include susy-breakpoint($desktop-superwide, $susy_desktop-superwide) {
-      @include span(2);
-    }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    left: 10%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: $mv-separator;
   }
+}
+
+h1.page-title {
+  display: block;
+  width: auto;
+  margin: 10px auto;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  cursor: default;
 }

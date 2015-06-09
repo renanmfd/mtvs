@@ -1,0 +1,12 @@
+<div class="menu-wrapper clearfix">
+	<h3>{{ loop.key }}</h3>
+	<ul class="menu">
+	  {% for link in menu %}
+	    <li class="link {{ link.title|css }}{% if loop.first %} first {% elseif loop.last %} last {% endif %}">
+	    	<a href="{{ link.link }}">
+	      	{{ link.title }}
+	    	</a>
+	  	</li>
+	  {% endfor %}
+	</ul>
+</div>

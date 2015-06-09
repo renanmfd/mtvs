@@ -1,27 +1,187 @@
-.main-menu {
-  text-align: center;
-  border-top: 1px solid #000;
-  margin: rem(10px 0);
+// Menu section
+@include susy-breakpoint(0 $desktop, $susy_desktop) {
+  body {
+    margin-left: 0;
+    overflow-x: hidden;
+    @include transition(margin-left, 0.4s, ease-in-out);
 
-  @include susy-breakpoint($tablet, $susy_tablet) {
-    @include clearfix;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    padding: rem(10px 0);
-  }
+    .main-menu ul {
+      display: block;
+      position: fixed;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      padding: 20px;
+      z-index: -1;
+      background-color: #fff;
+      @include transition(right, 0.4s, ease-in-out);
 
-  li {
-    display: block;
-    margin-top: rem(5px);
-    margin-bottom: rem(5px);
-    border-bottom: 1px solid #000;
-    padding-bottom: rem(10px);
+      li {
+        display: block;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        line-height: 25px;
+        border-bottom: 1px solid #ece9e0;
 
-    @include susy-breakpoint($tablet, $susy_tablet) {
-      float: left;
-      margin: rem(0 20px 0 0);
-      border-bottom: none;
-      padding-bottom: 0;
+        a {
+          font-size: 18px;
+          font-size: 1.125rem;
+          color: $mv-font-color;
+        }
+      }
+    }
+    &.menu-shifted {
+      margin-left: -300px;
+
+      .main-menu ul {
+        right: 0;
+      }
+      .menu-collapsed {
+        opacity: 0.7;
+      }
     }
   }
 }
+
+.menu-section {
+  background-color: $mv-wine;
+  
+  ul li a {
+    color: #fff;
+  }
+}
+
+.menu-section {
+  height: 50px;
+}
+
+.menu-container {
+  nav {
+    width: span(2);
+    float: left;
+    height: 49px;
+    line-height: 49px;
+  }
+  @include susy-breakpoint($desktop, $susy_desktop) {
+    .secondary-menu {
+      width: span(5);
+    }
+    .main-menu {
+      width: span(7);
+      float: right;
+    }
+  }
+  @include susy-breakpoint($tablet, $susy_tablet) {
+    .secondary-menu {
+      width: span(3);
+    }
+    .main-menu {
+      width: span(5);
+      float: right;
+    }
+  }
+}
+
+.main-menu {
+  .menu-collapsed {
+    cursor: pointer;
+    float: right;
+
+    @include susy-breakpoint($desktop, $susy_desktop) {
+      display: none;
+    }
+    span {
+      display: block;
+      float: right;
+      height: 100%;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: $mv-font2;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 0.8125rem;
+      height: 100%;
+      
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5px;
+        width: 40px;
+        height: 49px;
+        background: url('../../images/menu.png');
+        background-image: url('../../images/menu.svg'), none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    
+    @include susy-breakpoint($desktop, $susy_desktop) {
+      display: block;
+      float: right;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 10px;
+      
+      a {
+        font-family: $mv-font2;
+        font-size: 13px;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        opacity: 0.75;
+        @include transition(all, 0.2s, ease-in-out);
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &.emphasis a {
+        font-weight: 800;
+        opacity: 1;
+        
+        &:hover {
+          color: $mv-lightred;
+        }
+      }
+    }
+  }
+}
+
+.secondary-menu {
+  ul li {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 45px;
+    padding: 0 10px;
+    
+    @include susy-breakpoint($desktop, $susy_desktop) {
+      display: none;
+    }
+    &.emphasis {
+      display: none;
+      
+      @include susy-breakpoint($desktop, $susy_desktop) {
+        display: inline-block;
+      }
+    }
+    a {
+      font-family: $mv-font2;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 0.8125rem;
+      
+      &:hover {
+        color: $mv-lightred;
+      }
+    }
+  }
+}
+// End Title section

@@ -1,0 +1,377 @@
+{# Footer Variables #}
+{% set menus = {
+	'Plan Your Visit' : [
+		{'title' : 'Buy tickects', 'link' : '#'}, 
+		{'title' : 'Ẃhat to see', 'link' : '#'}, 
+		{'title' : 'Hours & Directions', 'link' : '#'}, 
+		{'title' : 'Évents & Exhibitions calendar', 'link' : '#'}, 
+		{'title' : 'Activities & Tours', 'link' : '#'}, 
+		{'title' : 'Where to eat', 'link' : '#'}, 
+		{'title' : 'Group Reservations', 'link' : '#'}, 
+		{'title' : 'The Mount Vernon Inn Restaurant', 'link' : '#'}, 
+		{'title' : 'The shops at Mount Vernon', 'link' : '#'}, 
+	],
+	'Discover' : [
+    {'title' : 'George Washington', 'link' : '#'}, 
+    {'title' : 'Estate & Gardens', 'link' : '#'}, 
+    {'title' : 'Research & Collections', 'link' : '#'}, 
+    {'title' : 'Educational Resources', 'link' : '#'}, 
+    {'title' : 'The Library', 'link' : '#'}, 
+    {'title' : 'Mount Vernon virtual tour', 'link' : '#'}, 
+    {'title' : 'The Mount Vernon App', 'link' : '#'}, 
+    {'title' : 'Photos', 'link' : '#'}, 
+    {'title' : 'Videos', 'link' : '#'}, 
+	],
+	'Support Mount Vernon' : [
+    {'title' : 'Make a donation', 'link' : '#'}, 
+    {'title' : 'Become a member', 'link' : '#'}, 
+    {'title' : 'Why support Mount Vernon?', 'link' : '#'}, 
+    {'title' : 'E-Newsletter', 'link' : '#'}, 
+    {'title' : 'Host a private event', 'link' : '#'}, 
+	]
+}
+%}
+
+{# Membership page Variables #}
+{% set types = [{
+  'name' : 'Regular Membership',
+  'plans' : {
+    'basic' : {
+      'name' : 'Basic',
+      'benefits' : [
+        'Unlimited admission for <b>1 person</b>',
+        'Personalized membership card',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$30.00', 
+          'per_month' : '$2.5',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$50.00', 
+          'per_month' : '$2.1',
+        },
+      },
+    },
+    'individual' : {
+      'name' : 'Individual',
+      'benefits' : [
+        'Unlimited admission for <b>1 person</b>',
+        'Personalized membership card',
+        'Advanced notice and priority ticketing for more than <b>15 events a year</b>',
+        '<b>10% discount</b> at the Shops of Mount Vernon',
+        '<b>10% discount</b> at the Mount Vernon Inn Restaurant and Food Court',
+        "Subscription to Mount Vernon's <b>member magazine</b>",
+        '<b>Audio Tour</b> for the historic area and museums',
+        'Mount Vernon <b>Guidebook</b> (only available for in person pick up)',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$50.00', 
+          'per_month' : '$4.2',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$80.00', 
+          'per_month' : '$6.5',
+        },
+      },
+    },
+    'dual' : {
+      'name' : 'Dual',
+      'benefits' : [
+        'Unlimited admissions for <b>2 person</b>',
+        'Two personalized membership card',
+        'Advanced notice and priority ticketing for more than <b>15 events a year</b>',
+        '<b>10% discount</b> at the Shops of Mount Vernon',
+        '<b>10% discount</b> at the Mount Vernon Inn Restaurant and Food Court',
+        "Subscription to Mount Vernon's <b>member magazine</b>",
+        '<b>Audio Tour</b> for the historic area and museums',
+        'Mount Vernon <b>Guidebook</b> (only available for in person pick up)',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$100.00', 
+          'per_month' : '$8.3',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$180.00', 
+          'per_month' : '$6.5',
+        },
+      },
+    },
+    'family' : {
+      'name' : 'Family',
+      'benefits' : [
+        'Unlimited admissions for Family up to <b>2 person</b> and any number of <b>children under age of 18</b>',
+        'Personalized membership card for <b>each family member</b>',
+        'Advanced notice and priority ticketing for more than <b>15 events a year</b>',
+        '<b>10% discount</b> at the Shops of Mount Vernon',
+        '<b>10% discount</b> at the Mount Vernon Inn Restaurant and Food Court',
+        "Subscription to Mount Vernon's <b>member magazine</b>",
+        '<b>Audio Tour</b> for the historic area and museums',
+        'A special "kid-friendly" version of the <b>Audio Tour</b>',
+        'Mount Vernon <b>Guidebook</b> (only available for in person pick up)',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$150.00', 
+          'per_month' : '$12.5',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$270.00', 
+          'per_month' : '$11.2',
+        },
+      },
+    },
+  },
+},
+{
+  'name' : 'Contributor Membership',
+  'plans' : {
+    'colonnade' : {
+      'name' : 'Colonnade Society',
+      'benefits' : [
+        '<b>TWO individual memberships</b> and all the associated benefits',
+        '<b>Plus admissions</b> for up to TWO accompanied guests each visit',
+        'Invitation for TWO to the Members-Only VIP <b>Candlelight Tour</b>',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$250.00', 
+          'per_month' : '$20.8',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$450.00', 
+          'per_month' : '$18.7',
+        },
+      },
+    },
+    'copula' : {
+      'name' : 'Copula Society',
+      'benefits' : [
+        '<b>TWO individual memberships</b> and all the associated benefits',
+        '<b>Plus admissions</b> for up to THREE accompanied guests each visit',
+        'Invitation for TWO to the Members-Only VIP <b>Candlelight Tour</b>',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$500.00', 
+          'per_month' : '$41.6',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$900.00', 
+          'per_month' : '$37.5',
+        },
+      },
+    },
+    'regent' : {
+      'name' : "Regent's Cirlce",
+      'benefits' : [
+        '<b>TWO individual memberships</b> and all the associated benefits',
+        '<b>Plus admissions</b> for up to EIGHT accompanied guests each visit',
+        'Complimentary gift Individual Membership',
+        "Festive <b>Regent's Circle Holiday Party</b> with exclusive Candlelight Mansion Tour",
+        "<b>U.S. flag</b> flown over Mount Vernon (first time Regent's Circle members only)",
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$1000.00', 
+          'per_month' : '$83.3',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$1800.00', 
+          'per_month' : '$75.0',
+        },
+      },
+    },
+    'onehundred' : {
+      'name' : 'Mount Vernon One Hundred',
+      'benefits' : [
+        "<b>TWO Rengent's Circle memberships</b> and all the associated benefits",
+        'Preferred access to VIP Tours and parking (subject to availability)',
+        'Leadership level recognition in the Annual Report',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$5000.00', 
+          'per_month' : '$416.5',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$9000.00', 
+          'per_month' : '$375.0',
+        },
+      },
+    },
+  },
+},
+{
+  'name' : 'Business Sponsorship',
+  'plans' : {
+    'friend' : {
+      'name' : 'Friend',
+      'benefits' : [
+        "Two tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'Two tickets to the Spring or Fall <b>Wine Festivals</b>',
+        'Supporter window decal',
+        'Four individual cards for annual unlimited estate admission',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$500.00', 
+          'per_month' : '$41.6',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$900.00', 
+          'per_month' : '$37.5',
+        },
+      },
+    },
+    'patron' : {
+      'name' : 'Patron',
+      'benefits' : [
+        "Four tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'Four tickets to the Spring or Fall <b>Wine Festivals</b>',
+        'Supporter window decal',
+        'Six individual cards for annual unlimited estate admission',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$750.00', 
+          'per_month' : '$62.5',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$1350.00', 
+          'per_month' : '$56.2',
+        },
+      },
+    },
+    'bronze' : {
+      'name' : 'Bronze',
+      'benefits' : [
+        "Six tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'Six tickets to the Spring or Fall <b>Wine Festivals</b>',
+        'Supporter window decal',
+        'Eight individual cards for annual unlimited estate admission',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$1000.00', 
+          'per_month' : '$83.3',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$1800.00', 
+          'per_month' : '$75.0',
+        },
+      },
+    },
+    'silver' : {
+      'name' : 'Silver',
+      'benefits' : [
+        '<b>$100 credit</b> at the Mount Vernon Inn',
+        "Eight tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'Eight tickets to the Spring or Fall <b>Wine Festivals</b>',
+        'Supporter window decal',
+        'Ten individual cards for annual unlimited estate admission',
+        'Two tickets to the <b>Birthnight Supper and Ball</b>',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$2500.00', 
+          'per_month' : '$208.3',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$4500.00', 
+          'per_month' : '$187.5',
+        },
+      },
+    },
+    'gold' : {
+      'name' : 'Gold',
+      'benefits' : [
+        '<b>$250 credit</b> at the Mount Vernon Inn',
+        "Ten tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'Ten tickets to the Spring or Fall <b>Wine Festivals</b>',
+        'Supporter window decal',
+        'Twenty individual cards for annual unlimited estate admission',
+        'Four tickets to the <b>Birthnight Supper and Ball</b>',
+        'One <b>VIP tour</b> of Mount Vernon for up to 12 people',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$5000.00', 
+          'per_month' : '$416.5',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$9000.00', 
+          'per_month' : '$375.0',
+        },
+      },
+    },
+    'Platinum' : {
+      'name' : 'Platinum',
+      'benefits' : [
+        '<b>$500 credit</b> at the Mount Vernon Inn',
+        "Twelve tickets to the Mount Vernon Regent's Circle Holiday Party",
+        'One <b>U.S. Flag</b> flown over Mount Vernon',
+        '<b>10% discount</b> for purchases in The Shops, online, or by phone',
+        'One <b>VIP Table</b> that seats 12 to the Spring of Fall Wine Festival',
+        'Supporter window decal',
+        'Forty individual cards for annual unlimited estate admission',
+        'Six tickets to the <b>Birthnight Supper and Ball</b>',
+        'Two <b>VIP tour</b> of Mount Vernon for up to 12 people',
+      ],
+      'prices' : {
+        'one_year' : {
+          'title' : '1 Year',
+          'per_year' : '$10000.00', 
+          'per_month' : '$833.3',
+        },
+        'two_years' : {
+          'title' : '2 Years',
+          'per_year' : '$18000.00', 
+          'per_month' : '$750.0',
+        },
+      },
+    },
+  },
+}]
+%}
+
+{# Declare the hole HTML block #}
+{% block html %}{% endblock %}

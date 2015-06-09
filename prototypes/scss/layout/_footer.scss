@@ -1,4 +1,259 @@
 footer {
-  border-top: 1px solid #000;
-  padding: rem(20px);
+  padding: rem(35px) rem(35px) rem(20px) rem(35px);
+  background-color: $mv-darkgray;
+    
+  h3 {
+    text-transform: uppercase;
+    color: $mv-salmon;
+    font-size: 17px;
+    font-size: 1.0625rem;
+    font-style: normal;
+    margin: 10px 0;
+    cursor: default;
+  }
+  ul li {
+    padding: 8px 0;
+
+    a {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: $mv-font2;
+      letter-spacing: 0.02em;
+
+      &:hover {
+        color: $mv-gray;
+      }
+    }
+  }
+}
+
+.menu-wrapper,
+.connected-wrapper,
+.bottom-wrapper{
+  width: span(4);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@include susy-breakpoint($tablet $desktop-wide, $susy_tablet) {
+  .menu-wrapper {
+    @include span(2 of 6);
+    padding-left: 10px;
+    border-left: 1px solid $mv-separator;
+    
+    &:nth-child(3) {
+      @include last;
+    }
+    
+    &:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+  
+  .connected-wrapper {
+    width: 100%;
+    clear: both;
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid $mv-separator;
+    
+    > div {
+      @include span(1 of 2);
+      
+      &.newsletter {
+        @include last;
+      }
+    }
+  }
+}
+
+@include susy-breakpoint($desktop-wide, $susy_desktop_wide) {
+  .menu-wrapper, .connected-wrapper {
+    @include span(3);
+    padding-left: 20px;
+    border-left: 1px solid $mv-separator;
+    margin-bottom: 40px;
+    min-height: 370px;
+    
+     &:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+  .connected-wrapper {
+    @include last;
+    border-bottom: none;
+  }
+  .bottom-wrapper {
+    clear: both;
+  }
+  hr {
+    display: block;
+    clear: both;
+  }
+}
+
+.social-wrapper {
+  margin-top: 15px;
+
+  a {
+    display: inline-block;
+  }
+  .facebook svg:hover * {
+    fill: #3b5998;
+  }
+  .twitter svg:hover * {
+    fill: #4099ff;
+  }
+  .youtube svg:hover * {
+    fill: #c4302b;
+  }
+  .flickr svg:hover{
+    circle { fill: #0063dc; }
+    circle:last-child { fill: #ff0084; }
+  }
+  .vimeo svg:hover path:last-child {
+    fill: #45bbff;
+  }
+  .pinterest svg:hover * {
+    fill: #bd081c;
+  }
+  .instagram svg:hover * {
+    fill: #000;
+  }
+}
+
+.social-links {
+  margin-bottom: 20px;
+}
+
+.newsletter {
+  form {
+    width: span(4);
+    font-size: 0;
+    
+    &:before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: url('../../images/email.png');
+      background-image: url('../../images/email.svg'), none;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px;
+    }
+  }
+
+  input, button, form:before {
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+  }
+
+  input {
+    height: 28px;
+    width: 50%;
+    max-width: calc(100% - 120px);
+    
+    &:focus {
+      outline: none;
+    }
+    @include placeholder { 
+      color: $mv-gray;
+      font-family: $mv-font1;
+      font-style: italic;
+    }
+  }
+
+  button {
+    height: 40px;
+    width: 70px;
+    margin-left: 3px;
+    background-color: $mv-yellow;
+    font-family: $mv-font2;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+hr {
+  border-color: $mv-separator;
+  border-width: 1px;
+  border-top: none;
+  margin: 35px 0 30px 0;
+}
+
+.bottom-wrapper {
+  
+  ul {
+    margin-top: 40px;
+  }
+  ul li {
+    padding: 0;
+    
+    a {
+      text-transform: none;
+      color: $mv-salmon;
+      font-size: 13px;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  p {
+    text-transform: none;
+    color: $mv-salmon;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: default;
+  }
+}
+
+@include susy-breakpoint($tablet, $susy_tablet) {
+  .bottom-wrapper {
+    > img {
+      float: left;
+    }
+    .bottom-menu {
+      float: right;
+      width: span(4);
+      text-align: right;
+      margin-top: 20px;
+    }
+    > p {
+      clear: both;
+      float: right;
+    }
+    ul li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 10px;
+    }
+  }
+}
+
+@include susy-breakpoint($desktop-wide, $susy_desktop_wide) {
+  .bottom-wrapper {
+    .bottom-menu {
+      width: span(8);
+    }
+    > p {
+      clear: none;
+    }
+  }
 }

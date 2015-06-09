@@ -1,0 +1,17 @@
+{% set menu_links = [
+  {'link' : 'http://www.mountvernon.org/plan-your-visit/calendar/', 'title' : 'Calendar', 'current' : 'link'},
+  {'link' : 'http://www.mountvernon.org/app', 'title' : 'App', 'current' : 'link'},
+  {'link' : 'http://www.mountvernon.org/about/news/', 'title' : 'News', 'current' : 'link'},
+  {'link' : 'http://www.mountvernon.org/e-newsletter/', 'title' : 'E-Newsletter', 'current' : 'link'},
+  {'link' : 'http://www.mountvernon.org/about/', 'title' : 'About', 'current' : 'link'},
+  {'link' : 'http://www.mountvernon.org/donate/', 'title' : 'Donate', 'current' : 'link emphasis'},
+  {'link' : 'http://www.mountvernon.org/become-a-member/', 'title' : 'Membership', 'current' : 'link emphasis'},
+] 
+%}
+
+<div class="menu-collapsed"><span>Menu</span></div>
+<ul class="menu">
+  {% for link in menu_links %}
+    <li class="{{ link.current }}"><a href="{{ link.link }}">{{ link.title }}</a></li>
+  {% endfor %}
+</ul>

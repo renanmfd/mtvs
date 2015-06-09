@@ -1,0 +1,399 @@
+.membership-types {
+  ul {
+    font-size: 0;
+    margin: 20px 10px;
+  }
+  
+  ul li {
+    display: inline-block;
+    vertical-align: bottom;
+    width: span(30%);
+    border-bottom: 4px solid $grey-c;
+    @include transition(all, 0.3s, ease-in-out);
+    
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    &.separator {
+      width: span(5%);
+      height: 10px;
+      min-width: 0;
+      cursor: default;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    font-family: $mv-font2;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $mv-salmon;
+    @include transition(color, 0.2s, ease-in-out);
+  }
+  
+  a:hover h3 {
+    color: $mv-red;
+  }
+  
+  li.active {
+    border-bottom: 4px solid $mv-yellow;
+    
+    a{
+      cursor: default;
+      
+      &:hover h3 {
+        color: initial;
+      }
+      h3 {
+        color: #000;
+      }
+    }
+  }
+  
+  .stars,
+  .stars:before,
+  .stars:after {
+    display: block;
+    height: 12px;
+    background: url('../../images/star.png');
+    background-image: url('../../images/star.svg'), none;
+    background-repeat: no-repeat;
+    
+    @include susy-breakpoint($tablet, $susy_tablet) {
+      height: 14px;
+    }
+  }
+  
+  .stars {
+    display: block;
+    width: 12px;
+    margin: 7px auto;
+    background-size: 12px;
+    
+    @include susy-breakpoint($tablet, $susy_tablet) {
+      width: 14px;
+      background-size: 14px;
+    }
+  }
+  
+  .contributor-membership .stars {
+    width: 30px;
+    
+    @include susy-breakpoint($tablet, $susy_tablet) {
+      width: 34px;
+    }
+    
+    &:before {
+      content: '';
+      width: 12px;
+      float: right;
+      background-size: 12px;
+      
+      @include susy-breakpoint($tablet, $susy_tablet) {
+        width: 14px;
+        background-size: 14px;
+      }
+    }
+  }
+  
+  .business-sponsorship .stars {
+    width: 34px;
+    background-position: center;
+    
+    @include susy-breakpoint($tablet, $susy_tablet) {
+      width: 40px;
+    }
+    &:before,
+    &:after{
+      content: '';
+      width: 9px;
+      float: right;
+      background-position: center bottom;
+      background-size: 9px;
+      
+      @include susy-breakpoint($tablet, $susy_tablet) {
+        width: 11px;
+        background-size: 11px;
+      }
+    }
+    &:after {
+      float: left;
+    }
+  }
+}
+
+.membership {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  
+  @include transition(opacity, 0.6s, ease-in-out);
+  @include container;
+  @include clearfix;
+  
+  &.active {
+    opacity: 1;
+    position: relative;
+    left: 0;
+    height: auto;
+  }
+}
+
+.membership-plan {
+  @include span(4);
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  
+  @include susy-breakpoint($tablet $desktop-wide, $susy_tablet) {
+    @include span(4);
+    
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+  @include susy-breakpoint($desktop-wide, $susy_desktop_wide) {
+    @include span(3);
+    
+    &:nth-child(4n) {
+      @include last;
+    }
+    &:nth-child(4n+1) {
+      clear: left;
+    }
+  }
+  h2.plan-name {
+    border: none;
+    border-top: 7px solid $mv-lightred;
+    background-color: $mv-red;
+    color: #ffffff;
+    font-family: $mv-font2;
+    font-weight: 300;
+    font-size: 16px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 26px 0;
+  }
+  
+  ul.plan-benefit {
+    padding: 20px;
+    
+    li {
+      position: relative;
+      line-height: 30px;
+      margin: 5px 0;
+      padding-left: 20px;
+      overflow: hidden;
+      max-height: 100px;
+      @include transition(max-height, 1s, ease-in-out);
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 18px;
+        height: 18px;
+        background: url('../../images/mark.png');
+        background-image: url('../../images/mark.svg'), none;
+        background-size: 18px;
+      }
+      
+      span {
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: $grey-4;
+        
+        b {
+          color: #000;
+        }
+      }
+    }
+  }
+  &.collapsed {
+    
+    .extra {
+      max-height: 0;
+    }
+    .more-benefits {
+      background-image: none;
+      opacity: 1;
+      transform: rotate(0deg);
+      
+      span {
+        display: block;
+      }
+    }
+  }
+  
+  .more-benefits {
+    height: 50px;
+    margin-top: -10px;
+    line-height: 50px;
+    background-color: $grey-e;
+    color: $mv-gray;
+    font-family: $mv-font2;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-image: url('../../images/dropdown.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    opacity: 0.6;
+    transform: rotate(180deg);
+    
+    span {
+      display: none;
+    }
+    &:hover {
+      background-color: $grey-d;
+    }
+  }
+  
+  .plan-prices {
+    font-size: 0;
+    margin-left: gutter(4);
+    margin-right: gutter(4);
+    text-align: center;
+    border-top: 1px solid $grey-e;
+    
+    > div {
+      display: inline-block;
+      vertical-align: top;
+      width: span(2);
+      margin: 20px 0;
+      padding-left: 10px;
+      padding-right: 0px;
+      
+      &:first-child {
+        padding-left: 0px;
+        padding-right: 10px
+      }
+    }
+    
+    h3 {
+      font-family: $mv-font2;
+      font-size: 14px;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: $mv-gray;
+      margin-bottom: 15px;
+    }
+  }
+  .btn-membership {
+    background-color: $mv-pink;
+    width: 100%;
+    padding: 15px 5px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-align: center;
+    word-wrap: break-word;
+    color: $mv-lightred;
+    overflow: hidden;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    span {
+      color: $mv-wine;
+      font-size: 14px;
+      font-size: 0.8125rem;
+    }
+    
+    &:hover {
+      outline: 1px solid $mv-red;
+    }
+    
+    &.selected {
+      color: #fff;
+      background-color: $mv-lightred;
+      
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.membership-purchace {
+  background-color: $mv-red;
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+  @include transition(all, 0.3s, ease-in-out);
+  
+  @include susy-breakpoint($tablet, $susy_tablet) {
+    > div {
+      @include container;
+      @include clearfix;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  &.active {
+    height: 146px;
+    padding: 20px;
+  }
+  .purchace {
+    display: block;
+    margin: 0 30px;
+    color: #fff;
+    font-family: $mv-font2;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    
+    @include susy-breakpoint($tablet, $susy_tablet) {
+      margin: 0px;
+      @include span(4);
+      padding: 15px 0;
+    }
+    &.for-myself {
+      background-color: transparentize($mv-lightred, 0.5);
+      margin-bottom: 20px;
+      
+      @include susy-breakpoint($tablet, $susy_tablet) {
+        margin-bottom: 0;  
+      }
+      
+      &:hover {
+        background-color: $mv-lightred;
+      }
+    }
+    
+    &.as-gift {
+      background-color: transparentize($mv-yellow, 0.5);
+      
+      &:hover {
+        background-color:  transparentize($mv-yellow, 0.3);
+      }
+      @include susy-breakpoint($tablet, $susy_tablet) {
+        @include last; 
+      }
+    }
+  }
+}
