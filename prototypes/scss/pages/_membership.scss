@@ -243,7 +243,6 @@
     height: 50px;
     margin-top: -10px;
     line-height: 50px;
-    background-color: $grey-e;
     color: $mv-gray;
     font-family: $mv-font2;
     font-size: 13px;
@@ -253,6 +252,7 @@
     cursor: pointer;
     background: url('../images/dropdown.png');
     background-image: url('../images/dropdown.svg'), none;
+    background-color: $grey-e;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 15px;

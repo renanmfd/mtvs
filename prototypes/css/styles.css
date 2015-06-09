@@ -1451,7 +1451,6 @@ body:after {
   height: 50px;
   margin-top: -10px;
   line-height: 50px;
-  background-color: #eee;
   color: #acacac;
   font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
   font-size: 13px;
@@ -1461,6 +1460,7 @@ body:after {
   cursor: pointer;
   background: url("../images/dropdown.png");
   background-image: url("../images/dropdown.svg"), none;
+  background-color: #eee;
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: 15px;
