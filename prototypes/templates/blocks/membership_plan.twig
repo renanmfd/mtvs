@@ -4,7 +4,7 @@
 </h2>
 <ul class="plan-benefit">
   {% for benefits in plan.benefits %}
-    <li class="benefit benefit-{{ loop.index }}{% if loop.index > 3 %} extra{% endif %}"><span>{{ benefits|safe }}</span></li>
+    <li class="benefit benefit-{{ loop.index }}{% if loop.index > 3 %} extra{% endif %}"><p>{{ benefits|safe }}</p></li>
   {% endfor %}
 </ul>
 {% if plan.benefits.length > 3 %}
